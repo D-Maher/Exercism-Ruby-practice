@@ -60,12 +60,10 @@ class HammingTest < Minitest::Test
   end
 
   def test_disallow_first_strand_longer
-    skip
     assert_raises(ArgumentError) { Hamming.compute('AATG', 'AAA') }
   end
 
   def test_disallow_second_strand_longer
-    skip
     assert_raises(ArgumentError) { Hamming.compute('ATA', 'AGTG') }
   end
 
@@ -86,7 +84,6 @@ class HammingTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
     assert_equal 3, BookKeeping::VERSION
   end
 end
