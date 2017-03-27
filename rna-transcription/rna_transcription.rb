@@ -18,6 +18,9 @@ class Complement
       when "A"
         rna_strand += "U" 
 
+      else
+        return ""
+
       end
     end
 
