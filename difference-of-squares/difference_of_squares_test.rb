@@ -48,7 +48,6 @@ class DifferenceOfSquaresTest < Minitest::Test
   end
 
   def test_consistent_difference
-    skip
     squares = Squares.new(10)
     assert_equal squares.difference, squares.difference
   end
