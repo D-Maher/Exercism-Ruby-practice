@@ -4,9 +4,12 @@ class Squares
   end
 
   def square_of_sum
-   ((1..max_natural).reduce(0, :+)) ** 2
+   ((1..max_natural).reduce(:+)) ** 2
   end
 
+  def sum_of_squares
+    ((1..max_natural).to_a.map { |n| n ** 2}.reduce(:+))
+  end
 
   private
 
