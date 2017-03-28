@@ -4,6 +4,11 @@ class Sieve
     @max_num = n
   end
 
+  def primes
+    return [] if max_num < 2
+
+
+  end
 
   private
 
