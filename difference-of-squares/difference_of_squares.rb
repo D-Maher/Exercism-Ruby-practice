@@ -6,12 +6,13 @@ class Squares
 
   def square_of_sum
     return 0 if number == 0
-   (1..number).reduce(:+) ** 2
+    (1..number).reduce(:+) ** 2
+    # formula: (number * (number + 1) / 2) ** 2 
   end
 
   def sum_of_squares
     return 0 if number == 0
-    (1..number).map { |n| n ** 2}.reduce(:+)
+    (1..number).map { |n| n ** 2 }.reduce(:+)
   end
 
   def difference
