@@ -11,7 +11,7 @@ class Squares
 
   def sum_of_squares
     return 0 if number == 0
-    (1..number).to_a.map { |n| n ** 2}.reduce(:+)
+    (1..number).map { |n| n ** 2}.reduce(:+)
   end
 
   def difference
