@@ -1,17 +1,17 @@
 class Squares
 
-  def initialize(n)
-    @max_natural = n
+  def initialize(number)
+    @number = number
   end
 
   def square_of_sum
-    return 0 if max_natural == 0
-   ((1..max_natural).reduce(:+)) ** 2
+    return 0 if number == 0
+   (1..number).reduce(:+) ** 2
   end
 
   def sum_of_squares
-    return 0 if max_natural == 0
-    ((1..max_natural).to_a.map { |n| n ** 2}.reduce(:+))
+    return 0 if number == 0
+    (1..number).map { |n| n ** 2}.reduce(:+)
   end
 
   def difference
@@ -20,7 +20,7 @@ class Squares
 
   private
 
-  attr_reader :max_natural
+  attr_reader :number
 
 end
 
