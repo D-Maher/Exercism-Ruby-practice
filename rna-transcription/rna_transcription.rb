@@ -1,30 +1,11 @@
 class Complement
 
   def self.of_dna(dna_strand)
-    rna_strand = ""
 
-    dna_strand.chars.each do |nuc|
-      case nuc
+    return "" if !dna_strand.chars.reject { |nuc| %w(G C T A).include?(nuc) }.empty?
 
-      when "G"
-        rna_strand += "C" 
+    dna_strand.tr("GCTA", "CGAU")
 
-      when "C"
-        rna_strand += "G" 
-
-      when "T"
-        rna_strand += "A" 
-
-      when "A"
-        rna_strand += "U" 
-
-      else
-        return ""
-
-      end
-    end
-
-    rna_strand
   end
 
 end
