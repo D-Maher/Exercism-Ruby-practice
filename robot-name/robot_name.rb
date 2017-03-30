@@ -2,7 +2,7 @@ UPPERCASE = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
 
 DIGITS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
-NAMES_IN_USE = []
+TAKEN_NAMES = []
 
 
 class Robot
@@ -16,15 +16,19 @@ class Robot
   def generate_name
     name = ""
 
-    until !NAMES_IN_USE.include?(name) && !name.empty?
+    until !TAKEN_NAMES.include?(name) && !name.empty?
+      name = ""
       2.times { name += UPPERCASE.sample }
-
       3.times { name += DIGITS.sample.to_s }
     end
 
-    NAMES_IN_USE << name
+    TAKEN_NAMES << name
 
     name
+  end
+
+  def reset
+    @name = generate_name
   end
 
 end
