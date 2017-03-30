@@ -44,7 +44,6 @@ class GrainsTest < Minitest::Test
   end
 
   def test_returns_the_total_number_of_grains_on_the_board
-    skip
     assert_equal 18_446_744_073_709_551_615, Grains.total
   end
 
@@ -65,7 +64,6 @@ class GrainsTest < Minitest::Test
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
-    skip
     assert_equal 1, BookKeeping::VERSION
   end
 end
