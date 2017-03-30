@@ -3,15 +3,20 @@ class Prime
   def self.nth(n)
     raise ArgumentError if n == 0
 
-    primes_found = 0
+    primes_found = []
 
-    until primes_found == n
+    number = 0
 
+    until primes_found.length == n
+      
+      if is_prime?(number)
+        primes_found << number
+      end
 
-
-
+      number += 1
     end
 
+    primes_found.last
   end
 
 end
