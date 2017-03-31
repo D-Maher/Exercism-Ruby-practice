@@ -1,4 +1,30 @@
+class Phrase
 
+  def initialize(input_phrase)
+    @input_phrase = input_phrase
+  end
+
+  def word_count
+    word_count = {}
+
+    word_array = input_phrase.split(" ")
+
+    word_array.each do |word|
+      count = word_array.count(word)
+
+      word_count[word] = count
+    end
+
+    word_count
+  end
+
+
+  private
+
+  attr_reader :input_phrase
+
+
+end
 
 
 module BookKeeping

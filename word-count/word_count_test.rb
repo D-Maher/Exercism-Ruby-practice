@@ -13,21 +13,18 @@ class PhraseTest < Minitest::Test
   end
 
   def test_count_one_of_each_word
-    skip
     phrase = Phrase.new("one of each")
     counts = {"one"=>1, "of"=>1, "each"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_multiple_occurrences_of_a_word
-    skip
     phrase = Phrase.new("one fish two fish red fish blue fish")
     counts = {"one"=>1, "fish"=>4, "two"=>1, "red"=>1, "blue"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_handles_cramped_lists
-    skip
     phrase = Phrase.new("one,two,three")
     counts = {"one"=>1, "two"=>1, "three"=>1}
     assert_equal counts, phrase.word_count
