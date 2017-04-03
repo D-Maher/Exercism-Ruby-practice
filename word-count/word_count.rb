@@ -7,7 +7,7 @@ class Phrase
   def word_count
     word_count = {}
 
-    word_array = input_phrase.scan(/[a-zA-Z0-9]+/).map! { |word| word.downcase }
+    word_array = input_phrase.scan(/[(\w+|\w+'\w)]+/).map! { |word| word.downcase }
 
     word_array.each do |word|
       count = word_array.count(word)
