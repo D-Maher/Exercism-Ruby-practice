@@ -83,13 +83,11 @@ class BobTest < Minitest::Test
   end
 
   def test_statement_containing_question_mark
-    skip
     remark = 'Ending with ? means a question.'
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
 
   def test_prattling_on
-    skip
     remark = 'Wait! Hang on. Are you going to be OK?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end

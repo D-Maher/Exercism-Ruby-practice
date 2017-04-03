@@ -3,7 +3,7 @@ class Bob
   def self.hey(remark)
     response = "Whatever."
 
-    if remark.include?("?")
+    if remark.chars.last == "?"
       response = "Sure."
     end
 
