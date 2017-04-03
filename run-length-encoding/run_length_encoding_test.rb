@@ -33,7 +33,6 @@ class RunLengthEncodingTest < Minitest::Test
   end
 
   def test_decode_encode_combination
-    skip
     input = 'zzz ZZ  zZ'
     output = 'zzz ZZ  zZ'
     assert_equal output,
