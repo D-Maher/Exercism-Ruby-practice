@@ -19,16 +19,15 @@ class RunLengthEncoding
   def self.decode(input)
     decoded_input = ""
 
-    runs = input.scan(/(\d\w|
-      \w)/).flatten
+    runs = input.scan(/\d+\w|\w/).flatten
 
     runs.each do |run|
-      run_info = run.chars[0]
+      char = run.chars.last
 
-      if run_info.to_i > 0
-        run_info.to_i.times { decoded_input += run.chars[1] }
+      if run.length > 1
+        run.chop.to_i.times { decoded_input += char }
       else
-        decoded_input += run_info
+        decoded_input += char
       end 
     end
 
