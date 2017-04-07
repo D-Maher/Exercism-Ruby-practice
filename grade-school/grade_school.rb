@@ -5,7 +5,7 @@ class School
   end
 
   def students(grade)
-    student_roster[grade]
+    student_roster[grade].sort
   end
 
   def add(student, grade)
