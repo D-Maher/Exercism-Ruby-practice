@@ -1,13 +1,15 @@
 class School
 
   def initialize
-    @student_roster = {}
+    @student_roster = Hash.new([])
   end
 
   def students(grade)
-    return [] if student_roster[grade].nil?
-
     student_roster[grade]
+  end
+
+  def add(student, grade)
+    student_roster[grade] << student
   end
 
 
