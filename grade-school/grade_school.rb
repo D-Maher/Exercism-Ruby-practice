@@ -16,6 +16,18 @@ class School
     end
   end
 
+  def students_by_grade
+    return [] if student_roster.empty?
+
+    students_by_grade = []
+
+    student_roster.each do |grade, students|
+      students_by_grade << {grade: grade, students: students.sort}
+    end
+    
+    students_by_grade.sort_by { |grade_roster| grade_roster[:grade] }
+  end
+
 
   private
 

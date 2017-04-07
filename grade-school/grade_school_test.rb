@@ -46,14 +46,12 @@ class SchoolTest < Minitest::Test
   end
 
   def test_empty_students_by_grade
-    skip
     school = School.new
     expected = []
     assert_equal expected, school.students_by_grade
   end
 
   def test_students_by_grade
-    skip
     school = School.new
     grade    = 6
     students = %w(Beemee Aimee Ceemee)
@@ -63,7 +61,6 @@ class SchoolTest < Minitest::Test
   end
 
   def test_students_by_grade_sorted
-    skip
     school = School.new
     everyone.each do |grade|
       grade[:students].each { |student| school.add(student, grade[:grade]) }
