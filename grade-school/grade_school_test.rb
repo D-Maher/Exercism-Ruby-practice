@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+
+require 'pry'
+
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'grade_school'
@@ -18,7 +21,6 @@ class SchoolTest < Minitest::Test
   end
 
   def test_add_students_to_different_grades
-    skip
     school = School.new
     school.add('Aimee', 3)
     school.add('Beemee', 7)
