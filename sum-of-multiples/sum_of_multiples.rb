@@ -13,11 +13,12 @@ class SumOfMultiples
       factors.each do |factor|
         if num % factor == 0
           multiples_to_add << num
+          break
         end
       end
     end
 
-    multiples_to_add.uniq.reduce(:+)
+    multiples_to_add.reduce(:+)
   end
 
 
