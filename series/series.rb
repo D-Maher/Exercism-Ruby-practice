@@ -5,6 +5,8 @@ class Series
   end
 
   def slices(n)
+    raise ArgumentError, "Slice length cannot exceed string length" if n > series.length
+
     slice_array = []
 
     counter = 0
