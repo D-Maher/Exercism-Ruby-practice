@@ -31,44 +31,37 @@ class SeriesTest < Minitest::Test
   end
 
   def test_simple_slices_of_three
-    skip
     series = Series.new('01234')
     assert_equal ['012', '123', '234'], series.slices(3)
   end
 
   def test_simple_slices_of_three_again
-    skip
     series = Series.new('31001')
     assert_equal ['310', '100', '001'], series.slices(3)
   end
 
   def test_other_slices_of_three
-    skip
     series = Series.new('982347')
     expected = ['982', '823', '234', '347']
     assert_equal expected, series.slices(3)
   end
 
   def test_simple_slices_of_four
-    skip
     series = Series.new('01234')
     assert_equal ['0123', '1234'], series.slices(4)
   end
 
   def test_simple_slices_of_four_again
-    skip
     series = Series.new('91274')
     assert_equal ['9127', '1274'], series.slices(4)
   end
 
   def test_simple_slices_of_five
-    skip
     series = Series.new('01234')
     assert_equal ['01234'], series.slices(5)
   end
 
   def test_simple_slices_of_five_again
-    skip
     series = Series.new('81228')
     assert_equal ['81228'], series.slices(5)
   end
