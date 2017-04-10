@@ -24,6 +24,10 @@ class PhoneNumber
     number[0..2]
   end
 
+  def to_s
+    "(#{area_code}) #{number[3..5]}-#{number[6..-1]}"
+  end
+
 
   private
 
