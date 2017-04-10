@@ -5,15 +5,16 @@ class Series
   end
 
   def slices(n)
-    series_to_slice = series
-
     slice_array = []
 
-    until series_to_slice.empty?
-      slice_array << series_to_slice.slice!(0...n)
+    counter = 0
+
+    while counter < series.length
+      slice_array << series.slice(counter...(counter + n))
+      counter += 1
     end
 
-    slice_array
+    slice_array.select{ |slice| slice.length == n }
   end
 
 
