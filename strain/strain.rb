@@ -1,11 +1,23 @@
 class Array
 
   def keep
-    self.select {|item| yield(item)}
+    kept_items = []
+
+    self.each do |item|
+      kept_items << item if yield(item)
+    end
+
+    kept_items
   end
 
   def discard
-    self - self.select {|item| yield(item)}
+    discarded_items = []
+
+    self.each do |item|
+      discarded_items << item unless yield(item)
+    end
+
+    discarded_items
   end
 
 end
