@@ -1,11 +1,9 @@
-UPPERCASE = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
-
-DIGITS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-
-TAKEN_NAMES = []
-
-
 class Robot
+  @@uppercase = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+
+  @@digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+  @@taken_names = []
 
   attr_reader :name
 
@@ -16,13 +14,13 @@ class Robot
   def generate_name
     name = ""
 
-    until !TAKEN_NAMES.include?(name) && !name.empty?
+    until !@@taken_names.include?(name) && !name.empty?
       name = ""
-      2.times { name += UPPERCASE.sample }
-      3.times { name += DIGITS.sample.to_s }
+      2.times { name += @@uppercase.sample }
+      3.times { name += @@digits.sample.to_s }
     end
 
-    TAKEN_NAMES << name
+    @@taken_names << name
 
     name
   end
