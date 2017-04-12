@@ -37,22 +37,18 @@ class TrinaryTest < Minitest::Test
   end
 
   def test_invalid_trinary_is_decimal_0
-    skip
     assert_equal 0, Trinary.new('carrot').to_decimal
   end
 
   def test_invalid_trinary_with_digits_is_decimal_0
-    skip
     assert_equal 0, Trinary.new('0a1b2c').to_decimal
   end
 
   def test_invalid_trinary_with_multiline_string
-    skip
     assert_equal 0, Trinary.new("Invalid\n201\nString").to_decimal
   end
 
   def test_number_out_of_range
-    skip
     assert_equal 0, Trinary.new('4').to_decimal
   end
 
