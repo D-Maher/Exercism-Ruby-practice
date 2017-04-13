@@ -24,6 +24,20 @@ TEXT
     end
   end
 
+  def verses(start_num, end_num)
+    song = ""
+
+    while start_num >= end_num
+      if start_num > end_num
+        song += verse(start_num) + "\n"
+      else
+        song += verse(end_num)
+      end
+      start_num -= 1
+    end
+    
+  end
+
 end
 
 
