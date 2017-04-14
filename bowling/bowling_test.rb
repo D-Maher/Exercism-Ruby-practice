@@ -25,19 +25,16 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_spare_followed_by_zeros_is_worth_ten_points
-    skip
     roll([6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     assert_equal 10, @game.score
   end
 
   def test_points_scored_in_the_roll_after_a_spare_are_counted_twice
-    skip
     roll([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     assert_equal 16, @game.score
   end
 
   def test_consecutive_spares_each_get_a_one_roll_bonus
-    skip
     roll([5, 5, 3, 7, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     assert_equal 31, @game.score
   end
