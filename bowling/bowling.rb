@@ -20,8 +20,9 @@ class Game
       frame_score = 0
 
       if frame.reduce(:+) == 10
+
         frame_score += 10 + frames[frames.index(frame) + 1][0]
-      else
+      elsif frame.length > 1
         frame_score = frame.reduce(:+)
       end
 
