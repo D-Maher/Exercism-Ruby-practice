@@ -15,13 +15,11 @@ class BowlingTest < Minitest::Test
   end
 
   def test_should_be_able_to_score_a_game_with_all_zeros
-    # skip
     roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     assert_equal 0, @game.score
   end
 
   def test_should_be_able_to_score_a_game_with_no_strikes_or_spares
-    skip
     roll([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])
     assert_equal 90, @game.score
   end
