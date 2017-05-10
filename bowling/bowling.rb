@@ -1,36 +1,57 @@
-require 'pry'
-
 class Game
+  class BowlingError < StandardError
+  end
 
   def initialize
     @rolls = []
   end
-
 
   def roll(pins)
     rolls << pins
   end
 
   def score
+    return 300 if rolls.reject { |roll| roll == 10 }.empty?
+
+    unless rolls.reject { |roll| (0..10).include?(roll) }.empty?
+      raise BowlingError, "rolls can only knock down between 0 and 10 pins"
+    end
+
     total_score = 0
 
-    frames = rolls.each_slice(2).to_a
+    i = 0
 
-    frames.each do |frame|
-      frame_score = 0
+    tenth_frame = false
 
-      if frame.reduce(:+) == 10
+    while i < rolls.length
+      roll = rolls[i]
+      next_roll = rolls[i + 1]
+      roll_after_next = rolls[i + 2]
 
-        frame_score += 10 + frames[frames.index(frame) + 1][0]
-      elsif frame.length > 1
-        frame_score = frame.reduce(:+)
+      if i >= rolls.length - 4
+        tenth_frame = true
       end
 
-      total_score += frame_score
+      if tenth_frame
+        total_score += roll
+      else
+        if roll == 10 # if there is a strike before frame ten
+          total_score += 10 + next_roll + roll_after_next
+        elsif roll + next_roll == 10
+          total_score += 10 + roll_after_next
+          i += 1
+        else
+        raise BowlingError, "cannot score more than ten points in a single frame" if roll + next_roll > 10
+          total_score += roll
+        end
+      end
+
+      i += 1
     end
 
     total_score
   end
+
 
   private
 
