@@ -8,7 +8,7 @@ class Anagram
     confirmed_anagrams = []
 
     potential_anagrams.each do |pa|
-      if word.chars.sort == pa.chars.sort 
+      if word.downcase.chars.sort == pa.downcase.chars.sort && word.downcase != pa.downcase
         confirmed_anagrams << pa
       end
     end

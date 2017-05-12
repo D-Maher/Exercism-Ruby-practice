@@ -54,7 +54,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_identical_words
-    skip
     detector = Anagram.new('corn')
     anagrams = detector.match(["corn", "dark", "Corn", "rank", "CORN", "cron", "park"])
     expected = ["cron"]
@@ -62,7 +61,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_non_anagrams_with_identical_checksum
-    skip
     detector = Anagram.new('mass')
     anagrams = detector.match(["last"])
     expected = []
@@ -70,7 +68,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagrams_case_insensitively
-    skip
     detector = Anagram.new('Orchestra')
     anagrams = detector.match(["cashregister", "Carthorse", "radishes"])
     expected = ["Carthorse"]
@@ -78,7 +75,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagrams_using_case_insensitive_subject
-    skip
     detector = Anagram.new('Orchestra')
     anagrams = detector.match(["cashregister", "carthorse", "radishes"])
     expected = ["carthorse"]
@@ -86,7 +82,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagrams_using_case_insensitive_possible_matches
-    skip
     detector = Anagram.new('orchestra')
     anagrams = detector.match(["cashregister", "Carthorse", "radishes"])
     expected = ["Carthorse"]
@@ -94,7 +89,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_a_word_as_its_own_anagram
-    skip
     detector = Anagram.new('banana')
     anagrams = detector.match(["Banana"])
     expected = []
@@ -102,7 +96,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_a_anagram_if_the_original_word_is_repeated
-    skip
     detector = Anagram.new('go')
     anagrams = detector.match(["go Go GO"])
     expected = []
@@ -110,7 +103,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_anagrams_must_use_all_letters_exactly_once
-    skip
     detector = Anagram.new('tapper')
     anagrams = detector.match(["patter"])
     expected = []
@@ -118,7 +110,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_capital_word_is_not_own_anagram
-    skip
     detector = Anagram.new('BANANA')
     anagrams = detector.match(["Banana"])
     expected = []
@@ -143,7 +134,6 @@ class AnagramTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
     assert_equal 2, BookKeeping::VERSION
   end
 end
