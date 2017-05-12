@@ -5,7 +5,6 @@ require_relative 'anagram'
 # Common test data version: 1.0.1 196fc1a
 class AnagramTest < Minitest::Test
   def test_no_matches
-    # skip
     detector = Anagram.new('diaper')
     anagrams = detector.match(["hello", "world", "zombies", "pants"])
     expected = []
