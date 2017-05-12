@@ -12,10 +12,19 @@ class Bst
 
   def insert(new_data)
     if new_data <= data
-      self.left.nil? ? self.left = Bst.new(new_data) : self.left.insert(new_data)
+      @left.nil? ? @left = Bst.new(new_data) : @left.insert(new_data)
     else
-      self.right.nil? ? self.right = Bst.new(new_data) : self.right.insert(new_data)
+      @right.nil? ? @right = Bst.new(new_data) : @right.insert(new_data)
     end
+  end
+
+  def each(node=self, &block)
+    return if node.nil?
+    return node.to_enum unless block
+
+    each(node.left, &block)
+    yield node.data
+    each(node.right, &block)
   end
 
 end
