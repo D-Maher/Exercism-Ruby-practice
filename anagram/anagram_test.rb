@@ -12,7 +12,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_simple_anagram
-    skip
     detector = Anagram.new('ant')
     anagrams = detector.match(["tan", "stand", "at"])
     expected = ["tan"]
@@ -20,7 +19,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_false_positives
-    skip
     detector = Anagram.new('galea')
     anagrams = detector.match(["eagle"])
     expected = []
@@ -28,7 +26,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_two_anagrams
-    skip
     detector = Anagram.new('master')
     anagrams = detector.match(["stream", "pigeon", "maters"])
     expected = ["maters", "stream"]
@@ -36,7 +33,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_anagram_subsets
-    skip
     detector = Anagram.new('good')
     anagrams = detector.match(["dog", "goody"])
     expected = []
@@ -44,7 +40,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagram
-    skip
     detector = Anagram.new('listen')
     anagrams = detector.match(["enlists", "google", "inlets", "banana"])
     expected = ["inlets"]
@@ -52,7 +47,6 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_three_anagrams
-    skip
     detector = Anagram.new('allergy')
     anagrams = detector.match(["gallery", "ballerina", "regally", "clergy", "largely", "leading"])
     expected = ["gallery", "largely", "regally"]
