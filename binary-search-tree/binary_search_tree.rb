@@ -20,7 +20,7 @@ class Bst
 
   def each(node=self, &block)
     return if node.nil?
-    return node.to_enum unless block
+    return node.to_enum unless block_given?
 
     each(node.left, &block)
     yield node.data
