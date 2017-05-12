@@ -12,9 +12,9 @@ class Bst
 
   def insert(new_data)
     if new_data <= data
-      self.left = Bst.new(new_data)
+      self.left.nil? ? self.left = Bst.new(new_data) : self.left.insert(new_data)
     else
-      self.right = Bst.new(new_data)
+      self.right.nil? ? self.right = Bst.new(new_data) : self.right.insert(new_data)
     end
   end
 
