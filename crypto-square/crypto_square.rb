@@ -20,8 +20,22 @@ class Crypto
     until normalized_string.length == 0
       square << normalized_string.slice!(0...size)
     end
-    
+
     square
+  end
+
+  def ciphertext
+    cipher_string = ""
+
+    for i in 0...size do
+      plaintext_segments.each do |segment|
+        unless segment[i].nil?
+          cipher_string += segment[i]
+        end
+      end
+    end
+
+    cipher_string
   end
 
 

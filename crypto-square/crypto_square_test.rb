@@ -50,13 +50,11 @@ class CryptoTest < Minitest::Test
   end
 
   def test_ciphertext
-    skip
     crypto = Crypto.new('Time is an illusion. Lunchtime doubly so.')
     assert_equal 'tasneyinicdsmiohooelntuillibsuuml', crypto.ciphertext
   end
 
   def test_another_ciphertext
-    skip
     crypto = Crypto.new('We all know interspecies romance is weird.')
     assert_equal 'wneiaweoreneawssciliprerlneoidktcms', crypto.ciphertext
   end
