@@ -39,14 +39,12 @@ class CryptoTest < Minitest::Test
   end
 
   def test_plaintext_segments
-    skip
     crypto = Crypto.new('Never vex thine heart with idle woes')
     expected = %w(neverv exthin eheart withid lewoes)
     assert_equal expected, crypto.plaintext_segments
   end
 
   def test_other_plaintext_segments
-    skip
     crypto = Crypto.new('ZOMG! ZOMBIES!!!')
     assert_equal %w(zomg zomb ies), crypto.plaintext_segments
   end
