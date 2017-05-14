@@ -38,6 +38,22 @@ class Crypto
     cipher_string
   end
 
+  def normalize_ciphertext
+    cipher_square = []
+    size.times { cipher_square << "" }
+    plaintext_string = normalize_plaintext
+
+      until plaintext_string.length == 0
+        for i in 0...cipher_square.length
+          unless plaintext_string[0].nil?
+            cipher_square[i] += plaintext_string.slice!(0)
+          end
+        end
+      end
+
+    cipher_square.join(" ")
+  end
+
 
   private
 
