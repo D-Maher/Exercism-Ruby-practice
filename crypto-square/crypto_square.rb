@@ -8,6 +8,12 @@ class Crypto
     input_text.downcase.scan(/\w+/).join
   end
 
+  def size
+    square_size = Math.sqrt(normalize_plaintext.length)
+
+    square_size.to_i == square_size ? square_size : square_size.floor + 1
+  end
+
 
   private
 
