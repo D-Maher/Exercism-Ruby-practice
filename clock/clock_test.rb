@@ -5,12 +5,10 @@ require_relative 'clock'
 # Common test data version: 1.0.1 54c3b74
 class ClockTest < Minitest::Test
   def test_on_the_hour
-    # skip
     assert_equal "08:00", Clock.at(8, 0).to_s
   end
 
   def test_past_the_hour
-    skip
     assert_equal "11:09", Clock.at(11, 9).to_s
   end
 
