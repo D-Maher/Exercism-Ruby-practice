@@ -38,6 +38,9 @@ class Clock
     self.class.new(time[:hour], time[:minute])
   end
 
+  def ==(other_clock)
+    self.hour == other_clock.hour && self.minute == other_clock.minute
+  end
 end
 
 def adjust_time(hour, minute)
