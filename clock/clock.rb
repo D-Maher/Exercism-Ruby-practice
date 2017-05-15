@@ -30,6 +30,14 @@ class Clock
     self.class.new(time[:hour], time[:minute])
   end
 
+  def -(minutes_to_subtract)
+    new_minute = minute - minutes_to_subtract
+    new_hour = hour
+    time = adjust_time(new_hour, new_minute)
+
+    self.class.new(time[:hour], time[:minute])
+  end
+
 end
 
 def adjust_time(hour, minute)

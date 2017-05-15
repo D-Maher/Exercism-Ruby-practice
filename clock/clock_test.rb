@@ -85,7 +85,6 @@ class ClockTest < Minitest::Test
   end
 
   def test_add_no_minutes
-    skip
     assert_equal "06:41", (Clock.at(6, 41) + 0).to_s
   end
 
@@ -114,42 +113,34 @@ class ClockTest < Minitest::Test
   end
 
   def test_subtract_minutes
-    skip
     assert_equal "10:00", (Clock.at(10, 3) + -3).to_s
   end
 
   def test_subtract_to_previous_hour
-    skip
     assert_equal "09:33", (Clock.at(10, 3) + -30).to_s
   end
 
   def test_subtract_more_than_an_hour
-    skip
     assert_equal "08:53", (Clock.at(10, 3) + -70).to_s
   end
 
   def test_subtract_across_midnight
-    skip
     assert_equal "23:59", (Clock.at(0, 3) + -4).to_s
   end
 
   def test_subtract_more_than_two_hours
-    skip
     assert_equal "21:20", (Clock.at(0, 0) + -160).to_s
   end
 
   def test_subtract_more_than_two_hours_with_borrow
-    skip
     assert_equal "03:35", (Clock.at(6, 15) + -160).to_s
   end
 
   def test_subtract_more_than_one_day__1500_min_is_equal_to_25_hrs
-    skip
     assert_equal "04:32", (Clock.at(5, 32) + -1500).to_s
   end
 
   def test_subtract_more_than_two_days
-    skip
     assert_equal "00:20", (Clock.at(2, 20) + -3000).to_s
   end
 
