@@ -6,8 +6,6 @@ class RailFenceCipher
     return message if number_of_rails == 1
     return "More rails than letters" if number_of_rails > message.length
 
-    split_message = message.chars
-
     fence = []
     number_of_rails.times { fence << [] }
 
@@ -15,7 +13,7 @@ class RailFenceCipher
     bottom_rail = number_of_rails - 1
     going_down = true
 
-    split_message.each do |char|
+    message.chars.each do |char|
       if rail == 0
         fence[rail] << char
         rail += 1
@@ -40,7 +38,7 @@ class RailFenceCipher
     return "" if message.empty?
     return message if number_of_rails == 1
 
-
+    
   end
 
 end
