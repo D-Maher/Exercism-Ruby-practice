@@ -1,35 +1,39 @@
 class RailFenceCipher
   VERSION = 1
 
-  def self.encode(message, rails)
-    return '' if message.empty?
-    return message if rails == 1
-
-    encoded_message = ""
+  def self.encode(message, number_of_rails)
+    return "" if message.empty?
+    return message if number_of_rails == 1
+    return "More rails than letters" if number_of_rails > message.length
 
     split_message = message.chars
 
-    # for 2 rails
-      # starting with the first letter, add every other letter to encoded_message
-      # next, starting with the second letter, add every other letter to encoded_message
+    fence = []
+    number_of_rails.times { fence << [] }
 
-    i = 0
+    rail = 0
+    bottom_rail = number_of_rails - 1
+    going_down = true
 
-    while i < rails
-      split_message.each_with_index do |char, index|
-        if (index - i) % rails == 0
-          encoded_message += char
-        end
+    split_message.each do |char|
+      if rail == 0
+        fence[rail] << char
+        rail += 1
+        going_down = true
+      elsif rail < bottom_rail && going_down
+        fence[rail] << char
+        rail += 1
+      elsif rail < bottom_rail && !going_down
+        fence[rail] << char
+        rail -= 1
+      elsif rail == bottom_rail
+        fence[rail] << char
+        rail -= 1
+        going_down = false
       end
+    end
 
-      i += 1
-    end 
-
-    # for 3 rails
-      # starting with the first letter, add the letter at the index 4 greater than the previous letter to encoded_message
-
-
-    encoded_message
+    fence.flatten.join
   end
 
 end
