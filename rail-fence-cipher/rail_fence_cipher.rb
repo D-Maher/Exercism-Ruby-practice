@@ -36,4 +36,11 @@ class RailFenceCipher
     fence.flatten.join
   end
 
+  def self.decode(message, number_of_rails)
+    return "" if message.empty?
+    return message if number_of_rails == 1
+
+
+  end
+
 end
