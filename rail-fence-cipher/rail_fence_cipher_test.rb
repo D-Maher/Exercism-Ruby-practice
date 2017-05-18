@@ -41,13 +41,11 @@ class RailFenceCipherTest < Minitest::Test
   end
 
   def test_decode_with_two_rails
-    skip
     assert_equal 'XOXOXOXOXOXOXOXOXO',
                  RailFenceCipher.decode('XXXXXXXXXOOOOOOOOO', 2)
   end
 
   def test_decode_with_three_rails
-    skip
     assert_equal 'THEDEVILISINTHEDETAILS',
                  RailFenceCipher.decode('TEITELHDVLSNHDTISEIIEA', 3)
   end
