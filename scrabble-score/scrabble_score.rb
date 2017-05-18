@@ -39,6 +39,13 @@ class Scrabble
     return 0 if word.nil?
     return 0 if word.scan(/\w+/).empty?
 
+    word_score = 0
+
+    word.chars.each do |char|
+      word_score += LETTER_VALUES[char.downcase]
+    end
+
+    word_score
   end
 
 end
