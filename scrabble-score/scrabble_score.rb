@@ -48,4 +48,8 @@ class Scrabble
     word_score
   end
 
+  def self.score(word)
+    new(word).score
+  end
+
 end
