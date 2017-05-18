@@ -29,4 +29,16 @@ class Scrabble
   }
   private_constant :LETTER_VALUES
 
+  attr_reader :word, :letter_scores
+
+  def initialize(word)
+    @word = word
+  end
+
+  def score
+    return 0 if word.nil?
+    return 0 if word.scan(/\w+/).empty?
+
+  end
+
 end
