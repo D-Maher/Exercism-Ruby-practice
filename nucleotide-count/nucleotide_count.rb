@@ -11,6 +11,8 @@ class Nucleotide
 
   def count(nucleotide)
     return 0 if dna_strand.empty?
+
+    dna_strand.chars.select { |nuc| nuc == nucleotide }.length
   end
 
 end
