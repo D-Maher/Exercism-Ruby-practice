@@ -6,6 +6,10 @@ class Nucleotide
   end
 
   def self.from_dna(dna_strand)
+    unless dna_strand.chars.reject { |nucleotide| %w(A T C G).include?(nucleotide) }.empty?
+      raise ArgumentError, "DNA may only contain the nucleotides 'A', 'T', 'C', and 'G'" 
+    end
+
     new(dna_strand)
   end
 

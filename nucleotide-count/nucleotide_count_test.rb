@@ -40,7 +40,6 @@ class NucleotideTest < Minitest::Test
   end
 
   def test_validates_dna
-    skip
     assert_raises ArgumentError do
       Nucleotide.from_dna('JOHNNYAPPLESEED')
     end
