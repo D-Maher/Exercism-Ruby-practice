@@ -40,6 +40,7 @@ class Say
   end
 
   def in_english
+    raise ArgumentError, "integer must be within the range 0 and 999,999,999,999" unless (0..999999999999).include?(integer)
     return "zero" if integer == 0
     num_string = ""
 
