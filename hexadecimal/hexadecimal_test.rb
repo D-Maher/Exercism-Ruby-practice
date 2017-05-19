@@ -28,22 +28,18 @@ class HexadecimalTest < Minitest::Test
   end
 
   def test_invalid_hex_is_decimal_0
-    skip
     assert_equal 0, Hexadecimal.new('carrot').to_decimal
   end
 
   def test_black
-    skip
     assert_equal 0, Hexadecimal.new('000000').to_decimal
   end
 
   def test_white
-    skip
     assert_equal 16_777_215, Hexadecimal.new('ffffff').to_decimal
   end
 
   def test_yellow
-    skip
     assert_equal 16_776_960, Hexadecimal.new('ffff00').to_decimal
   end
 end
