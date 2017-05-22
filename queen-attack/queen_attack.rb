@@ -23,18 +23,29 @@ class Queens
   end
 
   def attack?
-    return true if same_rank?(white, black)
-    return true if same_file?(white, black)
+    return true if same_rank?
+    return true if same_file?
+    return true if diagonal?
   end
 
-  def same_rank?(white, black)
+  def same_rank?
     white[0] == black[0]
   end
 
-  def same_file?(white, black)
+  def same_file?
     white[1] == black[1]
   end
 
+  def diagonal?
+    for n in 0..7
+      return true if white[0] + n == black[0] && white[1] + n == black[1] 
+      return true if white[0] + n == black[0] && white[1] - n == black[1]
+      return true if white[0] - n == black[0] && white[1] + n == black[1]
+      return true if white[0] - n == black[0] && white[1] - n == black[1]
+    end
+
+    false
+  end
 
   private 
 
