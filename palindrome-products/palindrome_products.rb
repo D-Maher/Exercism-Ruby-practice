@@ -26,6 +26,10 @@ class Palindromes
     palindrome_products.fetch(palindrome_products.keys.max)
   end
 
+  def smallest
+    palindrome_products.fetch(palindrome_products.keys.min)
+  end
+
 
   private
 
