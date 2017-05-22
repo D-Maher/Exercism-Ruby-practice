@@ -3,7 +3,6 @@ class Palindromes
   def initialize(args = {})
     @max_factor = args[:max_factor]
     @min_factor = args.fetch(:min_factor) { 1 }
-
     @palindrome_products = {}
   end
 
@@ -12,8 +11,8 @@ class Palindromes
   end
 
   def generate
-    for x in min_factor..max_factor
-      for y in x..max_factor
+    (min_factor..max_factor).each do |x|
+      (x..max_factor).each do |y|
         potential_product = x * y
         if is_palindrome?(potential_product)
           product = palindrome_products.fetch(potential_product) { palindrome_products[potential_product] = PalindromeProduct.new(x * y) }
