@@ -22,6 +22,23 @@ class Queens
     position.reject { |coord| (0..7).include?(coord) }.empty?
   end
 
+  def attack?
+    return true if same_rank?(white, black)
+    return true if same_file?(white, black)
+  end
+
+  def same_rank?(white, black)
+    white[0] == black[0]
+  end
+
+  def same_file?(white, black)
+    white[1] == black[1]
+  end
+
+
+  private 
+
+  attr_reader :white, :black 
 
 end
 

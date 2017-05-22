@@ -33,19 +33,16 @@ class QueenAttackTest < Minitest::Test
   end
 
   def test_can_not_attack
-    skip
     queens = Queens.new(white: [2, 4], black: [6, 6])
     refute queens.attack?
   end
 
   def test_can_attack_on_same_rank
-    skip
     queens = Queens.new(white: [2, 4], black: [2, 6])
     assert queens.attack?
   end
 
   def test_can_attack_on_same_file
-    skip
     queens = Queens.new(white: [4, 5], black: [2, 5])
     assert queens.attack?
   end
