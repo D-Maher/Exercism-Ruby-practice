@@ -5,33 +5,28 @@ require_relative 'queen_attack'
 # Common test data version: 1.0.0 8adde5f
 class QueenAttackTest < Minitest::Test
   def test_queen_with_a_valid_position
-    # skip
     assert Queens.new(white: [2, 2])
   end
 
   def test_queen_must_have_positive_rank
-    skip
     assert_raises ArgumentError do
       Queens.new(white: [-2, 2])
     end
   end
 
   def test_queen_must_have_rank_on_board
-    skip
     assert_raises ArgumentError do
       Queens.new(white: [8, 4])
     end
   end
 
   def test_queen_must_have_positive_file
-    skip
     assert_raises ArgumentError do
       Queens.new(white: [2, -2])
     end
   end
 
   def test_queen_must_have_file_on_board
-    skip
     assert_raises ArgumentError do
       Queens.new(white: [4, 8])
     end
