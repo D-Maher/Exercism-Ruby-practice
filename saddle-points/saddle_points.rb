@@ -5,6 +5,7 @@ class Matrix
   def initialize(matrix_string)
     @matrix_string = matrix_string
     @rows = convert_to_grid
+    @columns = rows.transpose
   end
 
   def convert_to_grid
@@ -19,7 +20,7 @@ class Matrix
 
       grid << row
     end
-    
+
     grid
   end
 
