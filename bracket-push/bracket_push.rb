@@ -7,17 +7,25 @@ class Brackets
 
   private_constant :BRACKET_PAIRS
 
-  def self.paired?(bracket_string)
-    return true if bracket_string.empty?
+  def self.paired?(string)
+    split_bracket_string = string.chars.select { |char| BRACKET_PAIRS.to_a.flatten.include?(char) }
 
-    split_bracket_string = bracket_string.chars
+    openers = BRACKET_PAIRS.keys
+    
+    unpaired_openers = []
 
-    BRACKET_PAIRS.each do |open, close|
-      return false if split_bracket_string.count(open) != split_bracket_string.count(close)
-    end 
+    split_bracket_string.each do |char|
+      if openers.include?(char)
+        unpaired_openers << char
+      elsif char == BRACKET_PAIRS[unpaired_openers.last]
+        unpaired_openers.pop
+      else
+        unpaired_openers << nil
+      end
+    end
 
+    unpaired_openers.length == 0
   end
-
 end
 
 
