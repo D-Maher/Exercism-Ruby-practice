@@ -30,43 +30,36 @@ class TriangleTest < Minitest::Test
   end
 
   def test_triangle_is_isosceles_if_last_two_sides_are_equal
-    skip
     triangle = Triangle.new([3, 4, 4])
     assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
   def test_triangle_is_isosceles_if_first_two_sides_are_equal
-    skip
     triangle = Triangle.new([4, 4, 3])
     assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
   def test_triangle_is_isosceles_if_first_and_last_sides_are_equal
-    skip
     triangle = Triangle.new([4, 3, 4])
     assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
   def test_equilateral_triangles_are_also_isosceles
-    skip
     triangle = Triangle.new([4, 4, 4])
     assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
   def test_triangle_is_not_isosceles_if_no_sides_are_equal
-    skip
     triangle = Triangle.new([2, 3, 4])
     refute triangle.isosceles?, "Expected 'false', triangle is not isosceles."
   end
 
   def test_sides_that_violate_triangle_inequality_are_not_isosceles_even_if_two_are_equal
-    skip
     triangle = Triangle.new([1, 1, 3])
     refute triangle.isosceles?, "Expected 'false', triangle is not isosceles."
   end
 
   def test_isosceles_triangle_sides_may_be_floats
-    skip
     triangle = Triangle.new([0.5, 0.4, 0.5])
     assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
