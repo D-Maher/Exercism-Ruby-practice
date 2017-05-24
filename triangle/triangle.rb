@@ -20,6 +20,10 @@ class Triangle
     false
   end
 
+  def scalene?
+    sides.sort[0] + sides.sort[1] >= sides.sort[2] && !isosceles?
+  end
+
 
   private
 
